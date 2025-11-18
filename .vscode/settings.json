@@ -1,0 +1,26 @@
+{
+  "latex-workshop.latex.tools": [
+    {
+      "name": "latexmk",
+      "command": "latexmk",
+      "args": [
+        "-pdf",
+        "-pdflatex=lualatex",
+        "-synctex=1",
+        "-interaction=nonstopmode",
+        "-outdir=%OUTDIR%",
+        "-shell-escape",
+        "%DOCFILE%"
+      ]
+    }
+  ],
+  "latex-workshop.latex.recipes": [
+    {
+      "name": "latexmk (lualatex)",
+      "tools": ["latexmk"]
+    }
+  ],
+  "latex-workshop.latex.autoBuild.run": "onSave",
+  "latex-workshop.latex.clean.onSave": true,
+  "latex-workshop.view.pdf.viewer": "tab"
+}
