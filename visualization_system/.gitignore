@@ -1,0 +1,26 @@
+# LaTeX ビルド生成物
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.log
+*.out
+*.run.xml
+*.synctex.gz
+*.toc
+*.fls
+*.fdb_latexmk
+*.pdf
+
+# latexmk の出力ディレクトリを決めているなら 
+out/
+
+# バックアップファイル
+*~
+*.bak
+*.sav
+*.tmp
+
+# OS / エディタ固有
+.DS_Store
+Thumbs.db

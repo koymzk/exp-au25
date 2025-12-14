@@ -1,0 +1,36 @@
+\documentclass[a4paper,12pt]{article}
+% LuaLaTeX 日本語対応
+\usepackage{luatexja}
+\usepackage[ipaex]{luatexja-preset}
+\usepackage{graphicx}
+% LuaLaTeX-specific packages
+\usepackage{fontspec}
+\usepackage{luaotfload}
+\usepackage{microtype}
+\usepackage{tabularx}
+\usepackage{titlesec}
+\usepackage{geometry}
+\usepackage{amsmath}
+\usepackage{siunitx}
+\usepackage{tikz}
+\usetikzlibrary{external}
+% 外部化をオンに（キャッシュ先を figures/ に指定）
+\tikzexternalize[prefix=figures/]
+\tikzexternalize[mode=only pdf]
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usepackage{float}
+\usepackage{gnuplottex}
+% --- redefine captions and Japanese labels ---
+\usepackage[labelfont=bf]{caption}
+\renewcommand{\figurename}{図}
+\renewcommand{\tablename}{表}
+% --------------------------------------------
+\geometry{left=25mm,right=25mm,top=25mm,bottom=25mm}
+\titleformat{\section}{\large\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}{\normalsize\bfseries}{\thesubsection.}{1em}{}
+
+\begin{document}
+
+
+\end{document}

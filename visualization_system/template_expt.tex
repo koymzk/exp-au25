@@ -1,0 +1,122 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{unicode-math} % optional for math unicode
+% LuaLaTeX 日本語対応
+\usepackage{luatexja}
+\usepackage[ipaex]{luatexja-preset}
+% フォント設定
+\usepackage{ifthen}
+\usepackage{graphicx}
+% LuaLaTeX-specific packages
+\usepackage{fontspec}
+\usepackage{luaotfload}
+\usepackage{microtype}
+\usepackage{tabularx}
+\usepackage{titlesec}
+\usepackage{geometry}
+\usepackage{amsmath}
+\usepackage{siunitx}
+\usepackage{tikz}
+\usetikzlibrary{external}
+% 外部化をオンに（キャッシュ先を figures/ に指定）
+\tikzexternalize[prefix=figures/]
+\tikzexternalize[mode=only pdf]
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usepackage{float}
+% \usepackage{gnuplot-lua-tikz} % removed for LuaLaTeX
+\usepackage{gnuplottex}
+% --- redefine captions and Japanese labels ---
+\usepackage[labelfont=bf]{caption}
+\renewcommand{\figurename}{図}
+\renewcommand{\tablename}{表}
+% --------------------------------------------
+\geometry{left=25mm,right=25mm,top=25mm,bottom=25mm}
+\titleformat{\section}{\large\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}{\normalsize\bfseries}{\thesubsection.}{1em}{}
+
+\newcounter{experimentnumber}
+\setcounter{experimentnumber}{6}  % ← 実験番号を1～8の整数で設定してください
+\newcommand{\experimenttheme}{}  % テーマ格納用マクロを定義
+\newcommand{\instructor}{}       % 担当教員名格納用マクロを定義
+
+% 数値比較による実験テーマ設定（サブ番号も含め順番に振り直し）
+\ifnum\value{experimentnumber}=1
+    \renewcommand{\experimenttheme}{1. アナログ・デジタル変換器の製作と測定}%
+    \renewcommand{\instructor}{石黒 仁揮 先生、吉岡 健太郎 先生}%
+\fi
+\ifnum\value{experimentnumber}=2
+    \renewcommand{\experimenttheme}{2. 量子コンピュータ}%
+    \renewcommand{\instructor}{武岡 正裕 先生、フォンス ポール 先生}%
+\fi
+\ifnum\value{experimentnumber}=3
+    \renewcommand{\experimenttheme}{3-1. 回路システムとフィルタ}%
+    \renewcommand{\instructor}{池原 雅章 先生}%
+\fi
+\ifnum\value{experimentnumber}=4
+    \renewcommand{\experimenttheme}{3-2. 機械システムと制御}%
+    \renewcommand{\instructor}{久保 亮吾 先生}%
+\fi
+\ifnum\value{experimentnumber}=5
+    \renewcommand{\experimenttheme}{4. 光デバイス}%
+    \renewcommand{\instructor}{寺川 光洋 先生、小川 恵美悠 先生}%
+\fi
+\ifnum\value{experimentnumber}=6
+    \renewcommand{\experimenttheme}{5-1. 半導体デバイス}%
+    \renewcommand{\instructor}{田中 貴久 先生}%
+\fi
+\ifnum\value{experimentnumber}=7
+    \renewcommand{\experimenttheme}{5-2. 太陽電池}%
+    \renewcommand{\instructor}{斎木 敏治 先生}%
+\fi
+\ifnum\value{experimentnumber}=8
+    \renewcommand{\experimenttheme}{6. 半導体レーザの特性評価}%
+    \renewcommand{\instructor}{津田 裕之 先生}%
+\fi
+
+\begin{document}
+
+\begin{titlepage}
+\begin{center}
+    {\LARGE 電気情報工学実験第１　レポート}
+\end{center}
+\vspace{0.5em}
+\hfill {\large 2025年度}
+
+\renewcommand{\arraystretch}{2.2}
+\setlength{\tabcolsep}{6pt}
+\begin{center}
+\begin{tabular}{|p{0.22\textwidth}|p{0.72\textwidth}|}
+\hline
+実験テーマ & \experimenttheme \\
+\hline
+担当教員名 & \instructor \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{center}
+\begin{tabularx}{\textwidth}{|X|X|X|X|}
+\hline
+班番号 & C－7 & 出席番号 & 25E079 \\
+\hline
+\multicolumn{1}{|l|}{実験者氏名} & \multicolumn{3}{l|}{山崎恒} \\
+\hline
+\multicolumn{1}{|l|}{共同実験者氏名} & \multicolumn{3}{l|}{杉山 翔乙, 鈴木 優花, 中田 堅} \\
+\hline
+\end{tabularx}
+\end{center}
+
+\begin{center}
+\begin{tabularx}{\textwidth}{|X|X|X|X|}
+\hline
+実験日 & 2025/05/15 & レポート提出日 & 2025/05/21 \\
+\hline
+\end{tabularx}
+\end{center}
+\end{titlepage}
+
+
+\section{結論}
+本実験では，半導体レーザの発光モードフィールド径，I--L特性，発光スペクトル，および変調特性を測定・解析した．ガウスビーム近似によるビーム径の評価，I--L曲線からのしきい値電流の決定，スペクトルピーク間隔からの共振器長推定，および変調応答の周波数特性評価を通じて，半導体レーザの基本特性とその物理的背景を理解することができた．
+
+\end{document}
